@@ -394,12 +394,12 @@ var import_jsx_dev_runtime2 = require("react/jsx-dev-runtime"), links = () => [
   return (0, import_node2.json)({ contacts });
 };
 function App() {
-  let { contacts } = (0, import_react2.useLoaderData)();
+  let { contacts } = (0, import_react2.useLoaderData)(), navigation = (0, import_react2.useNavigation)();
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("html", { lang: "en", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("head", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("meta", { charSet: "utf-8" }, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 37,
+        lineNumber: 39,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
@@ -412,31 +412,31 @@ function App() {
         !1,
         {
           fileName: "app/root.tsx",
-          lineNumber: 38,
+          lineNumber: 40,
           columnNumber: 9
         },
         this
       ),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Meta, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 42,
+        lineNumber: 44,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Links, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 43,
+        lineNumber: 45,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/root.tsx",
-      lineNumber: 36,
+      lineNumber: 38,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("body", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { id: "sidebar", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h1", { children: "Remix Contacts" }, void 0, !1, {
           fileName: "app/root.tsx",
-          lineNumber: 47,
+          lineNumber: 49,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { children: [
@@ -454,7 +454,7 @@ function App() {
               !1,
               {
                 fileName: "app/root.tsx",
-                lineNumber: 50,
+                lineNumber: 52,
                 columnNumber: 15
               },
               this
@@ -470,28 +470,28 @@ function App() {
               !1,
               {
                 fileName: "app/root.tsx",
-                lineNumber: 57,
+                lineNumber: 59,
                 columnNumber: 15
               },
               this
             )
           ] }, void 0, !0, {
             fileName: "app/root.tsx",
-            lineNumber: 49,
+            lineNumber: 51,
             columnNumber: 13
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Form, { method: "post", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("button", { type: "submit", children: "New" }, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 64,
+            lineNumber: 66,
             columnNumber: 15
           }, this) }, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 63,
+            lineNumber: 65,
             columnNumber: 13
           }, this)
         ] }, void 0, !0, {
           fileName: "app/root.tsx",
-          lineNumber: 48,
+          lineNumber: 50,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("nav", { children: contacts.length ? /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("ul", { children: contacts.map(
@@ -507,17 +507,17 @@ function App() {
                   contact.last
                 ] }, void 0, !0, {
                   fileName: "app/root.tsx",
-                  lineNumber: 83,
+                  lineNumber: 85,
                   columnNumber: 19
                 }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("i", { children: "No Name" }, void 0, !1, {
                   fileName: "app/root.tsx",
-                  lineNumber: 87,
+                  lineNumber: 89,
                   columnNumber: 19
                 }, this),
                 " ",
                 contact.favorite ? /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { children: "\u2605" }, void 0, !1, {
                   fileName: "app/root.tsx",
-                  lineNumber: 90,
+                  lineNumber: 92,
                   columnNumber: 19
                 }, this) : null
               ]
@@ -526,69 +526,80 @@ function App() {
             !0,
             {
               fileName: "app/root.tsx",
-              lineNumber: 72,
+              lineNumber: 74,
               columnNumber: 21
             },
             this
           ) }, contact.id, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 71,
+            lineNumber: 73,
             columnNumber: 15
           }, this)
         ) }, void 0, !1, {
           fileName: "app/root.tsx",
-          lineNumber: 69,
+          lineNumber: 71,
           columnNumber: 13
         }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("i", { children: "No contacts" }, void 0, !1, {
           fileName: "app/root.tsx",
-          lineNumber: 98,
+          lineNumber: 100,
           columnNumber: 17
         }, this) }, void 0, !1, {
           fileName: "app/root.tsx",
-          lineNumber: 97,
+          lineNumber: 99,
           columnNumber: 13
         }, this) }, void 0, !1, {
           fileName: "app/root.tsx",
-          lineNumber: 67,
+          lineNumber: 69,
           columnNumber: 11
         }, this)
       ] }, void 0, !0, {
         fileName: "app/root.tsx",
-        lineNumber: 46,
+        lineNumber: 48,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { id: "detail", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Outlet, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 104,
-        columnNumber: 11
-      }, this) }, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 103,
-        columnNumber: 9
-      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
+        "div",
+        {
+          className: navigation.state === "loading" ? "loading" : "",
+          id: "detail",
+          children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Outlet, {}, void 0, !1, {
+            fileName: "app/root.tsx",
+            lineNumber: 111,
+            columnNumber: 11
+          }, this)
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/root.tsx",
+          lineNumber: 105,
+          columnNumber: 9
+        },
+        this
+      ),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.ScrollRestoration, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 106,
+        lineNumber: 113,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Scripts, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 107,
+        lineNumber: 114,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.LiveReload, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 108,
+        lineNumber: 115,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/root.tsx",
-      lineNumber: 45,
+      lineNumber: 47,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/root.tsx",
-    lineNumber: 35,
+    lineNumber: 37,
     columnNumber: 5
   }, this);
 }
@@ -939,7 +950,7 @@ var Favorite = ({ contact }) => {
 };
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-ZHYL2JFP.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-2KYFOATO.js", "/build/_shared/chunk-NGCX2ENJ.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-CIHOAUNV.js", imports: ["/build/_shared/chunk-G7CHZRZX.js"], hasAction: !0, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/contacts.$contactId": { id: "routes/contacts.$contactId", parentId: "root", path: "contacts/:contactId", index: void 0, caseSensitive: void 0, module: "/build/routes/contacts.$contactId-NULAIRL5.js", imports: ["/build/_shared/chunk-AUYLHJJM.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/contacts.$contactId_.edit": { id: "routes/contacts.$contactId_.edit", parentId: "root", path: "contacts/:contactId/edit", index: void 0, caseSensitive: void 0, module: "/build/routes/contacts.$contactId_.edit-IRLLCFII.js", imports: ["/build/_shared/chunk-AUYLHJJM.js"], hasAction: !0, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "4c0282be", hmr: { runtime: "/build/_shared/chunk-NGCX2ENJ.js", timestamp: 1705413476556 }, url: "/build/manifest-4C0282BE.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-ZHYL2JFP.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-2KYFOATO.js", "/build/_shared/chunk-NGCX2ENJ.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-2OBU2SDD.js", imports: ["/build/_shared/chunk-G7CHZRZX.js"], hasAction: !0, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/contacts.$contactId": { id: "routes/contacts.$contactId", parentId: "root", path: "contacts/:contactId", index: void 0, caseSensitive: void 0, module: "/build/routes/contacts.$contactId-NULAIRL5.js", imports: ["/build/_shared/chunk-AUYLHJJM.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/contacts.$contactId_.edit": { id: "routes/contacts.$contactId_.edit", parentId: "root", path: "contacts/:contactId/edit", index: void 0, caseSensitive: void 0, module: "/build/routes/contacts.$contactId_.edit-IRLLCFII.js", imports: ["/build/_shared/chunk-AUYLHJJM.js"], hasAction: !0, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "2bf9d8ad", hmr: { runtime: "/build/_shared/chunk-NGCX2ENJ.js", timestamp: 1705431573113 }, url: "/build/manifest-2BF9D8AD.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !1, v3_relativeSplatPath: !1 }, publicPath = "/build/", entry = { module: entry_server_node_exports }, routes = {
