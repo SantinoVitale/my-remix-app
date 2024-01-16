@@ -9,7 +9,8 @@ import {
   ScrollRestoration,
   NavLink,
   useLoaderData,
-  useNavigation
+  useNavigation,
+  useSubmit
 } from "@remix-run/react";
 import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
 import appStylesHref from "./app.css";
@@ -37,6 +38,12 @@ export const loader = async ({
 export default function App() {
   const { contacts, q } = useLoaderData<typeof loader>();
   const navigation = useNavigation();
+  const submit = useSubmit();
+  const searching =
+    navigation.location &&
+    new URLSearchParams(navigation.location.search).has(
+      "q"
+    );
 
   useEffect(() => {
     const searchField = document.getElementById("q");
@@ -63,6 +70,10 @@ export default function App() {
             <Form id="search-form" role="search">
               <input
                 aria-label="Search contacts"
+                onChange={(event) =>
+                  submit(event.currentTarget)
+                }
+                className={searching ? "loading" : ""}
                 defaultValue={q || ""}
                 id="q"
                 name="q"
@@ -71,7 +82,7 @@ export default function App() {
               />
               <div
                 aria-hidden
-                hidden={true}
+                hidden={!searching}
                 id="search-spinner"
               />
             </Form>
@@ -117,7 +128,9 @@ export default function App() {
         </div>
         <div 
           className={
-            navigation.state === "loading" ? "loading" : ""
+            navigation.state === "loading" && !searching
+              ? "loading"
+              : ""
           }
           id="detail"
         >
