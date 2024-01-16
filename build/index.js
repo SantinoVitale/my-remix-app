@@ -3,6 +3,9 @@ var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf, __hasOwnProp = Object.prototype.hasOwnProperty;
+var __commonJS = (cb, mod) => function() {
+  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
 var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: !0 });
@@ -20,6 +23,13 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: !0 }) : target,
   mod
 )), __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: !0 }), mod);
+
+// app/routes/_index.tsx
+var require_index = __commonJS({
+  "app/routes/_index.tsx"() {
+    "use strict";
+  }
+});
 
 // <stdin>
 var stdin_exports = {};
@@ -193,6 +203,9 @@ async function updateContact(id, updates) {
   if (!contact)
     throw new Error(`No contact found for ${id}`);
   return await fakeContacts.set(id, { ...contact, ...updates }), contact;
+}
+async function deleteContact(id) {
+  fakeContacts.destroy(id);
 }
 [
   {
@@ -604,29 +617,39 @@ function App() {
   }, this);
 }
 
+// app/routes/contacts.$contactId.destroy.tsx
+var contacts_contactId_destroy_exports = {};
+__export(contacts_contactId_destroy_exports, {
+  action: () => action2
+});
+var import_node3 = require("@remix-run/node"), import_tiny_invariant2 = __toESM(require("tiny-invariant"));
+var action2 = async ({
+  params
+}) => ((0, import_tiny_invariant2.default)(params.contactId, "Missing contactId param"), await deleteContact(params.contactId), (0, import_node3.redirect)("/"));
+
 // app/routes/contacts.$contactId_.edit.tsx
 var contacts_contactId_edit_exports = {};
 __export(contacts_contactId_edit_exports, {
-  action: () => action2,
+  action: () => action3,
   default: () => EditContact,
   loader: () => loader2
 });
-var import_node3 = require("@remix-run/node"), import_react3 = require("@remix-run/react"), import_tiny_invariant2 = __toESM(require("tiny-invariant"));
-var import_jsx_dev_runtime3 = require("react/jsx-dev-runtime"), action2 = async ({
+var import_node4 = require("@remix-run/node"), import_react3 = require("@remix-run/react"), import_tiny_invariant3 = __toESM(require("tiny-invariant"));
+var import_jsx_dev_runtime3 = require("react/jsx-dev-runtime"), action3 = async ({
   params,
   request
 }) => {
-  (0, import_tiny_invariant2.default)(params.contactId, "Missing contactId param");
+  (0, import_tiny_invariant3.default)(params.contactId, "Missing contactId param");
   let formData = await request.formData(), updates = Object.fromEntries(formData);
-  return await updateContact(params.contactId, updates), (0, import_node3.redirect)(`/contacts/${params.contactId}`);
+  return await updateContact(params.contactId, updates), (0, import_node4.redirect)(`/contacts/${params.contactId}`);
 }, loader2 = async ({
   params
 }) => {
-  (0, import_tiny_invariant2.default)(params.contactId, "Missing contactId param");
+  (0, import_tiny_invariant3.default)(params.contactId, "Missing contactId param");
   let contact = await getContact(params.contactId);
   if (!contact)
     throw new Response("Not Found", { status: 404 });
-  return (0, import_node3.json)({ contact });
+  return (0, import_node4.json)({ contact });
 };
 function EditContact() {
   let { contact } = (0, import_react3.useLoaderData)();
@@ -791,15 +814,15 @@ __export(contacts_contactId_exports, {
   default: () => Contact,
   loader: () => loader3
 });
-var import_node4 = require("@remix-run/node"), import_react4 = require("@remix-run/react");
-var import_tiny_invariant3 = __toESM(require("tiny-invariant")), import_jsx_dev_runtime4 = require("react/jsx-dev-runtime"), loader3 = async ({
+var import_node5 = require("@remix-run/node"), import_react4 = require("@remix-run/react");
+var import_tiny_invariant4 = __toESM(require("tiny-invariant")), import_jsx_dev_runtime4 = require("react/jsx-dev-runtime"), loader3 = async ({
   params
 }) => {
-  (0, import_tiny_invariant3.default)(params.contactId, "Missing contactId param");
+  (0, import_tiny_invariant4.default)(params.contactId, "Missing contactId param");
   let contact = await getContact(params.contactId);
   if (!contact)
     throw new Response("Not Found", { status: 404 });
-  return (0, import_node4.json)({ contact });
+  return (0, import_node5.json)({ contact });
 };
 function Contact() {
   let { contact } = (0, import_react4.useLoaderData)();
@@ -949,8 +972,11 @@ var Favorite = ({ contact }) => {
   }, this);
 };
 
+// server-entry-module:@remix-run/dev/server-build
+var route4 = __toESM(require_index());
+
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-ZHYL2JFP.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-2KYFOATO.js", "/build/_shared/chunk-NGCX2ENJ.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-2OBU2SDD.js", imports: ["/build/_shared/chunk-G7CHZRZX.js"], hasAction: !0, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/contacts.$contactId": { id: "routes/contacts.$contactId", parentId: "root", path: "contacts/:contactId", index: void 0, caseSensitive: void 0, module: "/build/routes/contacts.$contactId-NULAIRL5.js", imports: ["/build/_shared/chunk-AUYLHJJM.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/contacts.$contactId_.edit": { id: "routes/contacts.$contactId_.edit", parentId: "root", path: "contacts/:contactId/edit", index: void 0, caseSensitive: void 0, module: "/build/routes/contacts.$contactId_.edit-IRLLCFII.js", imports: ["/build/_shared/chunk-AUYLHJJM.js"], hasAction: !0, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "2bf9d8ad", hmr: { runtime: "/build/_shared/chunk-NGCX2ENJ.js", timestamp: 1705431573113 }, url: "/build/manifest-2BF9D8AD.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-C7YM5V5T.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-2KYFOATO.js", "/build/_shared/chunk-NGCX2ENJ.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-6PII2M63.js", imports: ["/build/_shared/chunk-G7CHZRZX.js"], hasAction: !0, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-QW5LNJTG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/contacts.$contactId": { id: "routes/contacts.$contactId", parentId: "root", path: "contacts/:contactId", index: void 0, caseSensitive: void 0, module: "/build/routes/contacts.$contactId-S2LCXQA2.js", imports: ["/build/_shared/chunk-AUYLHJJM.js"], hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/contacts.$contactId.destroy": { id: "routes/contacts.$contactId.destroy", parentId: "routes/contacts.$contactId", path: "destroy", index: void 0, caseSensitive: void 0, module: "/build/routes/contacts.$contactId.destroy-CD54FBRA.js", imports: void 0, hasAction: !0, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/contacts.$contactId_.edit": { id: "routes/contacts.$contactId_.edit", parentId: "root", path: "contacts/:contactId/edit", index: void 0, caseSensitive: void 0, module: "/build/routes/contacts.$contactId_.edit-NZIU5YC3.js", imports: ["/build/_shared/chunk-AUYLHJJM.js"], hasAction: !0, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "23e11bc0", hmr: { runtime: "/build/_shared/chunk-NGCX2ENJ.js", timestamp: 1705432018606 }, url: "/build/manifest-23E11BC0.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !1, v3_relativeSplatPath: !1 }, publicPath = "/build/", entry = { module: entry_server_node_exports }, routes = {
@@ -961,6 +987,14 @@ var mode = "development", assetsBuildDirectory = "public/build", future = { v3_f
     index: void 0,
     caseSensitive: void 0,
     module: root_exports
+  },
+  "routes/contacts.$contactId.destroy": {
+    id: "routes/contacts.$contactId.destroy",
+    parentId: "routes/contacts.$contactId",
+    path: "destroy",
+    index: void 0,
+    caseSensitive: void 0,
+    module: contacts_contactId_destroy_exports
   },
   "routes/contacts.$contactId_.edit": {
     id: "routes/contacts.$contactId_.edit",
@@ -977,6 +1011,14 @@ var mode = "development", assetsBuildDirectory = "public/build", future = { v3_f
     index: void 0,
     caseSensitive: void 0,
     module: contacts_contactId_exports
+  },
+  "routes/_index": {
+    id: "routes/_index",
+    parentId: "root",
+    path: void 0,
+    index: !0,
+    caseSensitive: void 0,
+    module: route4
   }
 };
 // Annotate the CommonJS export names for ESM import in node:
