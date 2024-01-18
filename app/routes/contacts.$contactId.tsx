@@ -21,9 +21,18 @@ export const loader = async ({
   params,
 }: LoaderFunctionArgs) => {
   invariant(params.contactId, "Missing contactId param");
+  if (params.contactId === "prueba") {
+    throw new Response("Custom Error Message", {
+      status: 400,
+    });
+  }
+
   const contact = await getContact(params.contactId);
+
   if (!contact) {
-    throw new Response("Not Found", { status: 404 });
+    throw new Response("Not Found", {
+      status: 404,
+    });
   }
   return json({ contact });
 };
