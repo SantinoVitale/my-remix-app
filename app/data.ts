@@ -73,7 +73,7 @@ export async function getContacts(query?: string | null) {
   return contacts.sort(sortBy("last", "createdAt"));
 }
 
-export async function createContact(values) {
+export async function createContact(values: object) {
   const contact = await fakeContacts.create(values);
   return contact;
 }
