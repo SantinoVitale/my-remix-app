@@ -1,11 +1,9 @@
 import type { ActionFunctionArgs } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
 import { Form, useNavigate } from "@remix-run/react";
-import invariant from "tiny-invariant";
 import { createContact } from "../data";
 
 export const action = async ({
-  params,
   request,
 }: ActionFunctionArgs) => {
   const formData = await request.formData();

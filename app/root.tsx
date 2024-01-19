@@ -15,7 +15,7 @@ import {
   isRouteErrorResponse,
 } from "@remix-run/react";
 import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
-import appStylesHref from "./app.css";
+import appStylesHref from "./styles/main.css";
 import { getContacts } from "./data";
 import { useEffect } from "react";
 
@@ -35,40 +35,6 @@ export const loader = async ({
   const contacts = await getContacts(q);
   return json({ contacts, q });
 };
-
-export function ErrorBoundary() {
-  const error = useRouteError();
-  console.error(error);
-  return (
-    <html>
-      <head>
-        <title>Oh no!</title>
-        <Meta />
-        <Links />
-      </head>
-      <body>
-          {isRouteErrorResponse(error) ? (
-              <div>
-                <h1>
-                  {error.status} {error.statusText}
-                </h1>
-                <p>Data: {error.data}</p>
-              </div>
-            ) : error instanceof Error ? (
-              <div>
-                <h1>Error</h1>
-                <p>{error.message}</p>
-                <p>The stack trace is:</p>
-                <pre>{error.stack}</pre>
-              </div>
-            ) : (
-              <h1>Unknown Error</h1>
-            )}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 export default function App() {
   const { contacts, q } = useLoaderData<typeof loader>();
@@ -180,6 +146,40 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+      </body>
+    </html>
+  );
+}
+
+export function ErrorBoundary() {
+  const error = useRouteError();
+  console.error(error);
+  return (
+    <html>
+      <head>
+        <title>Oh no!</title>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+          {isRouteErrorResponse(error) ? (
+              <div>
+                <h1>
+                  {error.status} {error.statusText}
+                </h1>
+                <p>Data: {error.data}</p>
+              </div>
+            ) : error instanceof Error ? (
+              <div>
+                <h1>Error</h1>
+                <p>{error.message}</p>
+                <p>The stack trace is:</p>
+                <pre>{error.stack}</pre>
+              </div>
+            ) : (
+              <h1>Unknown Error</h1>
+            )}
+        <Scripts />
       </body>
     </html>
   );
