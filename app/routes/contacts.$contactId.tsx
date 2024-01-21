@@ -5,6 +5,7 @@ import { Form, useLoaderData, useFetcher } from "@remix-run/react";
 import { getContact, updateContact } from "../data";
 import type { ContactRecord } from "../data";
 import invariant from "tiny-invariant";
+export { ErrorBoundary } from "../components/ErrorBoundary";
 
 export const action = async ({
   params,

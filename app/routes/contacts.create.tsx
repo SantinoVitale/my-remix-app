@@ -2,6 +2,7 @@ import type { ActionFunctionArgs } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
 import { Form, useNavigate } from "@remix-run/react";
 import { createContact } from "../data";
+export { ErrorBoundary } from "../components/ErrorBoundary";
 
 export const action = async ({
   request,

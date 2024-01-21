@@ -3,6 +3,7 @@ import { json, redirect } from "@remix-run/node";
 import { Form, useLoaderData, useNavigate } from "@remix-run/react";
 import invariant from "tiny-invariant";
 import { getContact, updateContact } from "../data";
+export { ErrorBoundary } from "../components/ErrorBoundary";
 
 export const action = async ({
   params,
